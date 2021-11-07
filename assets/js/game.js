@@ -1,23 +1,39 @@
 //player
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
-var playerAttact = 10;
-var playerMoney =10;
+var playerAttack = 10;
+var playerMoney = 10;
 
-//enemy
-var enemyName = "Roborto";
+var enemyNames = ['Roborto', 'Amy Android', 'Robo Trumble'];
 var enemyHealth = 50;
-var enemyAttact = 12;
+var enemyAttack = 12;
 
-var fight = function() {
+console.log(enemyNames);
+console.log(enemyNames[0]);
+console.log(enemyNames[1]);
+console.log(enemyNames[2]);
+console.log(enemyNames.length);
+
+for(var i = 0; i < enemyNames.length; i++) {
+console.log(enemyNames[i]);
+console.log(i);
+console.log(enemyNames[i] + " is at " + i + " index ");
+  }
+//enemy
+
+
+
+var fight = function(enemyName) {
     // Alert players that they are starting the round
     window.alert("Welcome to Robot Gladiators!");
+     // ask player if they'd like to fight or run
+
 var promptFight =window.prompt("Would you like to FIGHT or skip this battle?  Enter 'FIGHT' or 'SKIP' to choose."
 );
   // if player choose to fight, then fight
   if (promptFight === "fight" || promptFight === "FIGHT") {
       //REMOVE ENEMY'S HEALTH BY SUBTRACTING THE AMOUNT SET IN  THE PLAYERATTACK VARIABLE
-      enemyHealth = enemyHealth -playerAttact;
+      enemyHealth = enemyHealth -playerAttack;
       console.log (
           playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining. "
       );
@@ -32,7 +48,7 @@ var promptFight =window.prompt("Would you like to FIGHT or skip this battle?  En
         }
 
     //remove player's health by subtracting the amount set in the enemyAttack variable
-    playerHealth = playerHealth - enemyAttact;
+    playerHealth = playerHealth - enemyAttack;
     console.log(
         enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining. "
     );
@@ -59,10 +75,15 @@ var promptFight =window.prompt("Would you like to FIGHT or skip this battle?  En
     else {
         fight();
     }
-    }
+    //if player did not chose 1 or 2 in prompt 
+    }else {
+        window.alert("You need to pick a valid option. Try again!");
 
-    
- //function end  
-}
-fight();
+    }
+// run fight function to start game
+};
+for(var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+};
+
 
