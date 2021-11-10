@@ -88,6 +88,7 @@ var startGame = function () {
         if (playerInfo.health > 0) {
             //let player know what round they're in 
             window.alert('Welcome to Robot Gladiators! Round ' + (i + 1));
+            debugger;
 
             //pick new enemy to fight based on index of enemy array
             var pickedEnemyObj = enemyInfo[i];
