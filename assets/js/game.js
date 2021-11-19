@@ -3,6 +3,8 @@
 var  randomNumber = function (min, max) {
     var value = Math.floor(Math.random() * (max - min + 1) + min);
 
+   
+
 return value;
 };
 //randon numeric generator end--------------------------------------------------------------------------
@@ -230,7 +232,7 @@ var shop = function () {
 //shop() end -----------------------------------------------------
 
 //function to set player name-----------------------------------------------
-var getplayerInfo, name = function () {
+var getplayerName  = function () {
     var name = "";
     //loop prompt
     while (name === "" || name === null) {
